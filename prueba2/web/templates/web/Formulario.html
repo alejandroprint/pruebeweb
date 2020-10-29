@@ -1,0 +1,151 @@
+{% extends "web/base.html"%}
+{% block title %} Formulario {% endblock %}
+
+{% block content%}
+<div class="row center">
+    <form class="col s12">
+      <div class=" section container">
+        <!--titulo-->
+        <h5>Ingresa tus Datos</h5>
+        <!--texto de registro-->
+        <div>
+          <div>
+            <h6>
+              Este registro nos permitirá conocerte y no tener que solicitarte los datos nuevamente cuando quieras
+            comprar.
+            Los campos marcados (*) deben ser llenados obligatoriamente.
+            </h6>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!---->
+
+  <div class="section container">
+    <div class="row">
+      <form class="col s12">
+        <div class="row card-panel">
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="nombre" type="text" class="validate" required pattern="[a-ñ-zA-Ñ-Z]+">
+              <label for="nombre">*Nombre</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="AP" type="text" class="validate" required pattern="[a-ñ-zA-Ñ-Z]+">
+              <label for="AP">*Apellido Paterno</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="AM" type="text" class="validate" required pattern="[a-ñ-zA-Ñ-Z]+">
+              <label for="AM">*Apellido Materno</label>
+            </div>
+          </div>
+          <!--direccion-->
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="direccion" type="text" class="validate" required pattern="[a-z A-Z ñ-Ñ 1-9999]+">
+              <label for="direccion">*Direccion</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="celular" type="text" class="validate" required pattern="[+ 1-9]+">
+              <label for="celular">*Celular </label>
+            </div>
+            <div class="input-field col s4">
+              <input id="date" type="text" class="datepicker">
+              <label for="date">Fecha de nacimiento </label>
+            </div>
+
+          </div>
+          <!--email, contraseña y confirmar contraseña-->
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="email" type="email" class="validate" required>
+              <label for="email">*Email</label>
+              <span class="helper-text" data-error="Error" data-success="Correcto"></span>
+            </div>
+            <div class="input-field col s4">
+              <input id="contrasenia" type="password" class="validate" required pattern="[a-z A-Z 1-9999]+">
+              <label for="contrasenia">*Contraseña</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="Recontrasenia" type="password" class="validate" required pattern="[a-z A-Z 1-9999]+">
+              <label for="Recontrasenia">*Confirmar Contraseña</label>
+            </div>
+          </div>
+          <!--pais, genero y numero de documento-->
+          <div class="row">
+            <div class="input-field col s4">
+              <select >
+                <option value="" disabled selected>Pais</option>
+                <option value="1">Argentina</option>
+                <option value="2">Chile</option>
+                <option value="3">Colombia</option>
+                <option value="3">Peru</option>
+              </select>
+              <label>Seleccione un pais</label>
+            </div>
+            <div class="input-field col s4">
+              <select>
+                <option value="" disabled selected>Genero</option>
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
+                <option value="3">Otro</option>
+              </select>
+              <label>Seleccione un genero</label>
+            </div>
+
+            <div class="input-field col s4">
+              <input id="Ndocumento" type="text" class="validate" required>
+              <label for="Ndocumento">*Número de documento</label>
+            </div>
+            <div class="conteiner">
+
+            </div>
+            <div class="row">
+              <div class="col s5">
+              </div>
+              <div class="input-field col s4">
+                <a class="btn" href="Principal.html">Volver</a>
+                <button id="btn1" class=" btn waves-effect waves-light">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    <footer class="page-footer #1a237e indigo darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4">Venta de productos tecnologico como computadores de alta gama,accesorios,telefonia.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Pc gamer</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Notebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Telefonos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Accesorio</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2020 derechos reservados
+      </div>
+    </div>
+  </footer>
+
+
+
+{% endblock %}
+
+
+
+
+{% block javascript%}
+
+{% endblock %}

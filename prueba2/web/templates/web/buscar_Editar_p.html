@@ -1,0 +1,38 @@
+{% extends "web/base.html"%}
+{% block title %} Principal {% endblock %}
+
+{% block content%}
+<div class="container">
+       <div class="nav-content #1a237e indigo darken-4">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="editar">editar</a></li>
+        <li class="tab"><a href="eliminar_p">eliminar</a></li>
+        <li class="tab"><a href="listado_producto">listar</a></li>
+          <li class="tab"><a href="agregar_p">Agregar</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<form action="buscar_para_editar" method ="POST">
+     {% csrf_token %}
+    <div class="section container">
+        <div class="row card-panel">
+        <div class="row">
+          <label > ingrese codigo del producto para editar editar : </label>
+            <input type="text" name="codigo">
+            <input type = "submit" class="waves-effect waves-light btn #76ff03 light-green accent-3" name="opcion" value="Buscar">
+        </div>
+    </div>
+    </div>
+</form>
+
+
+
+
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

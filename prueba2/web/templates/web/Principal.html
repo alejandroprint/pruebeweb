@@ -1,0 +1,100 @@
+{% extends "web/base.html"%}
+{% block title %} Principal {% endblock %}
+
+{% block content%}
+     <!--comienzo de carusel-->
+  <div class="">
+    <div class="row">
+      <div class="">
+        <div class="slider  ">
+          <ul class="slides ">
+            <li>
+              <img src="" alt="error">
+            </li>
+
+          </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+<div>
+
+    <div class =" center">
+      <h4> Producto destacados </h4>
+    </div>
+
+{% for producto in listado %}
+
+  <div class="row " >
+      <div class="col s2">
+        <div class="card">
+            <div class="card-image">
+                {% if producto.Foto_producto_d %}
+                    <tr><td><p><img src="{{producto.Foto_producto_d.url}}"></p></td></tr>
+                {% endif %}
+            </div>
+                <div class="card-content">
+                    <p> {{ producto.descripcion }}.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">{{ producto.precio }}</a>
+                </div>
+
+      </div>
+
+    </div>
+     {% endfor%}
+</div>
+
+
+
+
+
+
+<!--termino de carusel-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="page-footer #1a237e indigo darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4">Venta de productos tecnologico como computadores de alta gama,accesorios,telefonia.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Pc gamer</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Notebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Telefonos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Accesorio</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2020 derechos reservados
+      </div>
+    </div>
+  </footer>
+
+
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "web/base.html"%}
+{% block title %} Principal {% endblock %}
+
+{% block content%}
+<div class="container">
+       <div class="nav-content #1a237e indigo darken-4">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="editar">editar</a></li>
+        <li class="tab"><a href="eliminar_p">eliminar</a></li>
+        <li class="tab"><a href="listado_producto">listar</a></li>
+          <li class="tab"><a href="agregar_p">Agregar</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>>
+
+
+ <form action="actualizar_producto" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+     <div class="section container">
+ <div class="row card-panel">
+       <div class="row">
+              <div class="col s4">
+                    <input type="hidden" name="id_producto_d" value="{{producto.id_producto_d}}">
+                    <label>marca:</label><input type="text" name="marca"value="{{producto.marca}}"><br>
+              </div>
+              <div class="col s4">
+                <label>codigo:</label><input type="text" name="codigo" value="{{producto.codigo}}" ><br>
+              </div>
+              <div class="col s4">
+                    <label>modelo:</label><input type="text" name="modelo" value="{{producto.modelo}}"><br>
+              </div>
+
+              <div class="row">
+                     <div class="col s4">
+                     <label>descripcion:</label><input type="text" name="descripcion" value="{{producto.descripcion}}"><br>
+              </div>
+              <div class="col s4">
+                     <label>precio:</label><input type="text" name="precio" value="{{producto.precio}}"><br>
+              </div>
+              <div class="col s4">
+                     <br>
+                     <td><input  type="file" name="Foto_producto_d">
+                   {% if producto.Foto_producto_d %}
+
+                      <tr><td><p><img src="{{producto.Foto_producto_d.url}}"></p></td></tr>
+                         {% endif %}
+              </div>
+              </div>
+              <div class="row">
+                     <div class="col s4">
+                            <label>activo:</label><input type="text" name="activo" value="{{producto.activo}}"><br>
+                     </div>
+                     <div class="col s4">
+                            <label>tipo:</label><input type="text" name="tipo" value="{{producto.tipo}}"><br>
+                     </div>
+                     <div class="col s4">
+                            <label>destacado:</label><input type="text" name="destacado" value="{{producto.destacado}}"><br>
+                     </div>
+              </div>
+       </div>
+     </div>
+     </div>
+ <div class="center">
+            <input class="waves-effect waves-light btn #76ff03 light-green accent-3" type="submit" name="opcion" value="actualizar">-
+       </div>
+ </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

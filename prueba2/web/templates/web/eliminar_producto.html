@@ -1,0 +1,64 @@
+{% extends "web/base.html"%}
+{% block title %} Principal {% endblock %}
+
+{% block content%}
+<div class="container">
+       <div class="nav-content #1a237e indigo darken-4">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="editar">editar</a></li>
+        <li class="tab"><a href="eliminar_p">eliminar</a></li>
+        <li class="tab"><a href="listado_producto">listar</a></li>
+          <li class="tab"><a href="agregar_p">Agregar</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<form action="eliminar_porducto" method ="POST">
+     {% csrf_token %}
+    <div class="section container">
+        <div class="row card-panel">
+        <div class="row">
+            <div class="col s4">
+                <label > ingrese codigo de producto a eliminar : </label>
+                <input type="text" name="codigo">
+
+            </div>
+            <div class="col s4">
+                <br>
+                <input type  = "submit" class="waves-effect waves-light btn #d50000 red accent-4" name="opcion" value="Eliminar">
+            </div>
+
+        </div>
+    </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}
