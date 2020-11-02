@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>Registro usuario</title>
     {% load static %}
      <!-- Compiled and minified CSS -->
+     <link rel=icon href= "{% static 'imagen/logo.png' %}">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      <link rel="stylesheet" href="{% static 'mi.css' %}">
-     <link rel=icon href= "{% static 'imagen/logo.png' %}">
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body class="#311b92 deep-purple darken-4" >
+<body class="#311b92 deep-purple darken-4">
 
-  
+
+
 <div class="caja">
     <form action="" method="POST">
         {% csrf_token %}
@@ -26,11 +27,13 @@
                     </div>
                     <div class="col s6 center">
                       <div class="center">
-                        <img src="{% static 'imagen/logo.png' %}"alt="Error" width="200">
+                        <img src="{% static 'imagen/logo.png' %}"alt="Error" width="100">
                     </div>
-                            {{ form.as_table}}      
+                    {{ form.as_table}}    
                             <div class="center logo">
-                                <input type="submit" class="waves-effect waves-light btn" value="Ingresar">
+                                <input type="reset" class="waves-effect waves-light btn" value="Limpiar">
+                                <input type="submit"class="waves-effect waves-light btn" value="login">
+                                
                             </div>
                     </div>                 
                     <div>
@@ -42,13 +45,8 @@
     </form>
 </div>
    
+       
+     
 
-
-<script>
-   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.materialboxed');
-    var instances = M.Materialbox.init(elems, options);
-  });
-</script>
 </body>
 </html>

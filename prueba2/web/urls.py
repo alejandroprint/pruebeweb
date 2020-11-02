@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from . import views
+from .views import registro_usuario
 
 urlpatterns = [
     path('Principal', views.Principal, name='Principal'),
@@ -15,5 +16,6 @@ urlpatterns = [
     path('editar', views.editar, name='editar'),
     path('buscar_para_editar', views.buscar_para_editar, name='buscar_para_editar'),
     path('actualizar_producto', views.actualizar_producto, name='actualizar_producto'),
+    path('registro/', registro_usuario, name='registro_usuario'),
 
 ]

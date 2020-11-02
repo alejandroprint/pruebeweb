@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
 # Create your views here.
+from .forms import CustonUserFrom
 from web.models import producto
 from django.contrib.auth.decorators import login_required,permission_required
+from django.contrib.auth import login,authenticate
+from django.shortcuts import redirect
 
 
 
@@ -186,5 +189,22 @@ def actualizar_producto(request):
             return render(request, 'web/error/error_203.html', {})
 
 
+#registro de usuario 
+def registro_usuario(request):
+    data = {
+        'form':CustonUserFrom()
+    }
+     
+    if request.method == 'POST':
+        Formulario = CustonUserFrom(request.POST)
+        if Formulario.is_valid():
+            Formulario.save()
+            #autenticar al usuario y redirigirlo al inicio
+            username = Formulario.cleaned_data['username']
+            password = Formulario.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect(to='Principal')
 
+    return render(request,'registration/registrar.html', data)
 

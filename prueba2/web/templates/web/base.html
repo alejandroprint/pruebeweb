@@ -23,15 +23,15 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Notebook<i class="material-icons right">arrow_drop_down</i></a></li>
 
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">Telefonos<i class="material-icons right">arrow_drop_down</i></a></li>
-         
-          
-          
-    
+          {% if user.username|slice:"5" == "admin"%}
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown5">administrador</a></li>
+          <ul id="dropdown5" class="dropdown-content">
+              <li><a href="agregar_p">Agregar Producto</a></li>
+              <li><a href="#">usuario</a></li>
+          </ul>
+          {% endif %}
            
-          
-       
         {% if user.is_authenticated%}
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown5">administrador</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown6" ><i class="material-icons right">arrow_drop_down</i>  Usuario: {{user.username}}  </a></li>
             <ul id="dropdown6" class="dropdown-content">
               <li><a class="dropdown-trigger" href="{% url 'logout' %}" > Cerrar sesion </a></li>
@@ -39,7 +39,7 @@
             {% else %}
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown7"><i class="material-icons center">account_circle</i></a></li> 
                 <ul id="dropdown7" class="dropdown-content">
-                  <li><a class="dropdown-trigger" href="#" > registar </a></li>
+                  <li><a class="dropdown-trigger" href="{% url 'registro_usuario' %}" > registar </a></li>
                   <li><a class="dropdown-trigger"  href="{% url 'login' %}" > Iniciar sesion </a></li>
                 </ul> 
         {% endif %}
@@ -57,10 +57,6 @@
   </ul>
 
 
-  <ul id="dropdown5" class="dropdown-content">
-      <li><a href="agregar_p">Agregar Producto</a></li>
-      <li><a href="#">usuario</a></li>
-  </ul>
     
 
 
