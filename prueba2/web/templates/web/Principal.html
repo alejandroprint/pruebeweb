@@ -1,7 +1,8 @@
 {% extends "web/base.html"%}
 {% block title %} Principal {% endblock %}
-
+{% load static %}
 {% block content%}
+<!--comienzo de carusel-->
 <!--comienzo de carusel-->
 <div class="">
   <div class="row">
@@ -9,15 +10,45 @@
       <div class="slider  ">
         <ul class="slides ">
           <li>
-            <img src="" alt="error">
+            <img src="{% static 'imagen/numero1.jpg' %} " alt="error">
           </li>
-
+          <li>
+            <img src="{% static 'imagen/numero2.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero3.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero4.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero5.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero6.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero7.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero8.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero9.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero10.jpg' %} " alt="error">
+          </li>
+          <li>
+            <img src="{% static 'imagen/numero11.webp' %} " alt="error">
+          </li>
+          
         </ul>
-      </div>
+        </div>
     </div>
   </div>
 </div>
-<div>
+<!--termino de carusel-->
 
   <div class=" center">
     <h4> Producto destacados </h4>
@@ -101,5 +132,18 @@
   {% endblock %}
 
   {% block javascript%}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.slider');
+      var instances = M.Slider.init(elems, );
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Slider.init(elems, );
+    });
+  </script>
 
   {% endblock %}

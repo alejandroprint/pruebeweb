@@ -3,18 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+    {% load static %}
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link rel="stylesheet" href="{% static 'mi.css' %}">
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body >
-<h2>Autenticacion</h2>
+<body class="#311b92 deep-purple darken-4" >
 
+  
+<div class="caja">
     <form action="" method="POST">
         {% csrf_token %}
-        <table>
-             {{ form.as_table}}
-        </table>
-        <input type="submit" value="login">
+        <div class="row">
+            <form class="col s12">
+              <div class=" section container">
+                  <div class="row card-panel">
+                    <div class="col s3">
 
+                    </div>
+                    <div class="col s6 center">
+                      <div class="center">
+                        <img src="{% static 'imagen/logo.png' %}"alt="Error" width="200">
+                    </div>
+                            {{ form.as_table}}      
+                            <div class="center logo">
+                                <input type="submit" class="waves-effect waves-light btn" value="Ingresar">
+                            </div>
+                    </div>                 
+                    <div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
     </form>
+</div>
+   
 
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
+</script>
 </body>
 </html>
