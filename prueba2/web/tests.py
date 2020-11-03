@@ -1,4 +1,4 @@
-from django.test import TestCase
+#from django.test import TestCase
 
 # Create your tests here.
 import unittest
@@ -7,24 +7,24 @@ from web.models import producto
 
 class testproducto(unittest.TestCase):
 
-    def test_crear_objeto(self):
-        producto = producto.objects.create(
-                                           codigo='003',
+    def test_crear_producto(self):
+        Producto = producto.objects.create(
+                                           codigo='12345',
                                            marca='iphone',
-                                           modelo='xs max',
-                                           descripcion='el mejor modelo del mundo',
+                                           modelo='xsmax',
+                                           descripcion='elmejormodelo',
                                            precio='$699.990',
-                                           activo=1,
                                            tipo='c',
+                                           activo=1,
                                            destacado=1
                                            )
-        producto.save()
+        Producto.save()
 
-        self.assertTrue(producto,True)
+        self.assertTrue(Producto,True)
 
-    def test_val_rut(self):
-        producto = producto.objects.get(codigo='003')
-        self.assertEquals(producto.codigo, '003')
+    def test_val_codigo(self):
+        Producto = producto.objects.get(codigo='12345')
+        self.assertEquals(Producto.codigo,'12345')
 
     def test_crear_demo(self):
         a = 1
