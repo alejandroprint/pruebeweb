@@ -14,8 +14,8 @@ class testproducto(unittest.TestCase):
                                            modelo='xs max',
                                            descripcion='el mejor modelo del mundo',
                                            precio='$699.990',
-                                           activo=1
-                                           tipo='c'
+                                           activo=1,
+                                           tipo='c',
                                            destacado=1
                                            )
         producto.save()

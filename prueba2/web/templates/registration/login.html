@@ -28,10 +28,12 @@
                       <div class="center">
                         <img src="{% static 'imagen/logo.png' %}"alt="Error" width="200">
                     </div>
-                            {{ form.as_table}}      
+                            {{ form.as_table}}  
+                             
                             <div class="center logo">
                                 <input type="submit" class="waves-effect waves-light btn" value="Ingresar">
                             </div>
+                            <a href="{% url 'password_reset'%}">olvide mi contraseña</a>   
                     </div>                 
                     <div>
                   </div>

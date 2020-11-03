@@ -29,6 +29,12 @@ ALLOWED_HOSTS = []
 LOGIN_REDIRECT_URL='/web/Principal'
 LOGOUT_REDIRECT_URL='/web/Principal'
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pctodoexpress@gmail.com'
+EMAIL_HOST_PASSWORD = 'pcexpresstodo'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Application definition
 
