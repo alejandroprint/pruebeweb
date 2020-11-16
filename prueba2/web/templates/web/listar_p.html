@@ -2,7 +2,8 @@
 {% block title %}  {% endblock %}
 
 {% block content%}
-<div class="container">
+<br>
+<div class="container center">
        <div class="nav-content #1a237e indigo darken-4">
       <ul class="tabs tabs-transparent">
         <li class="tab"><a href="editar">editar</a></li>
@@ -18,15 +19,26 @@
 <div class =" center">
   <h4> listado </h4>
 </div>
-<div class="container">
-      <ul class="collection with-header">
-          <li class="collection-header"><h5>CODIGO MARCA MODELO</h5></li>
-            {% for producto in listado %}
-
-        <li class="collection-item">{{ producto.codigo }} {{ producto.marca }} {{ producto.modelo }}</li>
-            {% endfor%}
-
-        </ul>
+<div class="container responsive-table">
+  <table class="centered" >
+    <thead >
+      <tr>
+          <th>CODIGO</th>
+          <th>MARCA</th>
+          <th>MODELO</th>
+      </tr>
+    </thead>
+    {% for producto in listado %}
+    <tbody >
+      <tr>
+        <td>{{ producto.codigo }}</td>
+        <td>{{ producto.marca }}</td>
+        <td>{{ producto.modelo }}</td>
+      </tr>
+    </tbody>
+    {% endfor%}
+  </table>
+     
 </div>
 
 

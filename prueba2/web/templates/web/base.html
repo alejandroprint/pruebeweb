@@ -8,13 +8,14 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
       <link rel=icon href= "{% static 'imagen/logo.png' %}">
+      <link rel="stylesheet" href="{% static 'mi.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %} {% endblock%}</title>
 
 </head>
 <body>
 
-    <div class="navbar-fixed ">
+    <div class="navbar-fixed responsive-navbar">
     <nav class="#1a237e indigo darken-4">
       <div class="nav-wrapper">
             <a href="Principal" class="brand-logo left" ><img src="{% static 'imagen/logo.png' %}"alt="Error" width="70"> </a>
