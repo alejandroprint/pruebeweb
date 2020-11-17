@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'web',
     'rest_framework',
     'social_django',
+    'pwa',
+
 
 ]   
 
@@ -153,4 +155,4 @@ AUTHENTICATION_BACKENDS = (
 'django.contrib.auth.backends.ModelBackend',
 )
 
-
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
