@@ -37,6 +37,9 @@ EMAIL_HOST_PASSWORD = 'pcexpresstodo'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Application definition
+SOCIAL_AUTH_FACEBOOK_KEY = '704649153486704'
+SOCIAL_AUTH_FACEBOOK_SECRET = '461b9b4a99a8f92b6bbccfda213916ef'
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -46,8 +49,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    'rest_framework',
+    'social_django',
 
-]
+]   
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'prueba2.urls'
@@ -72,6 +78,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -137,6 +146,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = (
   os.path.join(SITE_ROOT, 'static/'),
+)
+
+AUTHENTICATION_BACKENDS = (
+'social_core.backends.facebook.FacebookOAuth2',
+'django.contrib.auth.backends.ModelBackend',
 )
 
 

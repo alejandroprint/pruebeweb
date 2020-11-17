@@ -29,11 +29,16 @@
                         <img src="{% static 'imagen/logo.png' %}"alt="Error" width="200">
                     </div>
                             {{ form.as_table}}  
-                             
+                            
+                            
                             <div class="center logo">
+                              <a href="{% url 'password_reset'%}">olvide mi contraseña</a> 
+                              <br>
+                              <a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
+                              <br>
                                 <input type="submit" class="waves-effect waves-light btn" value="Ingresar">
                             </div>
-                            <a href="{% url 'password_reset'%}">olvide mi contraseña</a>   
+                              
                     </div>                 
                     <div>
                   </div>

@@ -7,6 +7,10 @@ from django.contrib.auth.decorators import login_required,permission_required
 from django.contrib.auth import login,authenticate
 from django.shortcuts import redirect
 
+#rest_framework
+from rest_framework import viewsets
+from .serializers import productoSerializers
+
 
 
 def Principal (request):
@@ -208,3 +212,6 @@ def registro_usuario(request):
 
     return render(request,'registration/registrar.html', data)
 
+class productoViewset(viewsets.ModelViewSet):
+    queryset = producto.objects.all()
+    serializer_class = productoSerializers

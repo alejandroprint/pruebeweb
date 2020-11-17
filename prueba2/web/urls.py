@@ -1,7 +1,11 @@
 from django.contrib import admin
 from django.urls import path,include
 from . import views
-from .views import registro_usuario
+from .views import registro_usuario,productoViewset,productoSerializers
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('productos', productoViewset)
 
 urlpatterns = [
     path('Principal', views.Principal, name='Principal'),
@@ -17,5 +21,7 @@ urlpatterns = [
     path('buscar_para_editar', views.buscar_para_editar, name='buscar_para_editar'),
     path('actualizar_producto', views.actualizar_producto, name='actualizar_producto'),
     path('registro/', registro_usuario, name='registro_usuario'),
+    path('api/', include(router.urls))
+
 
 ]
