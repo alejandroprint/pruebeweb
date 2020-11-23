@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load pwa %}
-    {% progressive_web_app_meta %}
+  
   
     {% load static %}
 
@@ -12,28 +12,28 @@
       <link rel=icon href= "{% static 'imagen/logo.png' %}">
       <link rel="stylesheet" href="{% static 'mi.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
     <title>{% block title %} {% endblock%}</title>
 
 </head>
 <body>
-
-    <div class="navbar-fixed responsive-navbar">
-    <nav class="#1a237e indigo darken-4">
-      <div class="nav-wrapper">
-            <a href="Principal" class="brand-logo left" ><img src="{% static 'imagen/logo.png' %}"alt="Error" width="70"> </a>
-        <ul class="right hide-on-med-and-down">
-
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Notebook<i class="material-icons right">arrow_drop_down</i></a></li>
-
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">Telefonos<i class="material-icons right">arrow_drop_down</i></a></li>
-          {% if user.username|slice:"5" == "admin"%}
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown5">administrador</a></li>
-          <ul id="dropdown5" class="dropdown-content">
+  <nav class="sidenav-trigger ">
+    <div class="nav-wrapper #1a237e indigo darken-4">
+      <a href="#!" class="brand-logo"><img src="{% static 'imagen/logo.png' %}"alt="Error" width="50"> </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <a href="Principal" class="brand-logo left" ></a>
+            <ul class="right hide-on-med-and-down">
+            
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Notebook<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">Telefonos<i class="material-icons right">arrow_drop_down</i></a></li>
+            {% if user.username|slice:"5" == "admin"%}
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown5">administrador</a></li>
+            <ul id="dropdown5" class="dropdown-content">
               <li><a href="agregar_p">Agregar Producto</a></li>
               <li><a href="#">usuario</a></li>
-          </ul>
-          {% endif %}
-           
+            </ul>
+          {% endif %}  
         {% if user.is_authenticated%}
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown6" ><i class="material-icons right">arrow_drop_down</i>  Usuario: {{user.username}}  </a></li>
             <ul id="dropdown6" class="dropdown-content">
@@ -46,13 +46,40 @@
                   <li><a class="dropdown-trigger"  href="{% url 'login' %}" > Iniciar sesion </a></li>
                 </ul> 
         {% endif %}
-        </ul>
-      </div>
-    </nav>
-  </div>
+      </ul>
+    </div>
+  </nav>
+
+
+  <ul class="sidenav" id="mobile-demo">
+    
+    <li><a class="dropdown-trigger" href="Notebook" data-target="dropdown2">Notebook<i class="material-icons right"></i></a></li>
+    <li><a class="dropdown-trigger" href="celulares" data-target="dropdown3">Celulares<i class="material-icons right"></i></a></li>
+    {% if user.username|slice:"5" == "admin"%}
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown5">administrador</a></li>
+    <ul id="dropdown5" class="dropdown-content">
+      <li><a href="agregar_p">Agregar Producto</a></li>
+      <li><a href="#">usuario</a></li>
+    </ul>
+  {% endif %}  
+{% if user.is_authenticated%}
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown6" ><i class="material-icons right"></i>  Usuario: {{user.username}}  </a></li>
+    <li><a class="dropdown-trigger" href="{% url 'logout' %}" > Cerrar sesion </a></li>
+    <ul id="dropdown6" class="dropdown-content">
+      <li><a class="dropdown-trigger" href="{% url 'logout' %}" > Cerrar sesion </a></li>
+    </ul>      
+    {% else %}
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown7"><i class="material-icons center">account_circle</i></a></li> 
+        <ul id="dropdown7" class="dropdown-content">
+          <li><a class="dropdown-trigger" href="{% url 'registro_usuario' %}" > registar </a></li>
+          <li><a class="dropdown-trigger"  href="{% url 'login' %}" > Iniciar sesion </a></li>
+        </ul> 
+{% endif %}
+  </ul>
+
 
   <ul id="dropdown2" class="dropdown-content">
-    <li><a href="Notebook">Notebook</a></li>
+    <li><a href="Notebook">Notebook</a></li>  
   </ul>
 
   <ul id="dropdown3" class="dropdown-content">
@@ -74,6 +101,22 @@
 
 <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems, {
+          coverTrigger:false});
+        });
+    </script>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, );
+  });
+    </script>
+
+
 
         <script>
       document.addEventListener('DOMContentLoaded', function() {
