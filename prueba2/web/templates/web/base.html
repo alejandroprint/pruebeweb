@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load pwa %}
-  
+    {%progressive_web_app_meta%}
   
     {% load static %}
 
@@ -19,7 +19,7 @@
 <body>
   <nav class="sidenav-trigger ">
     <div class="nav-wrapper #1a237e indigo darken-4">
-      <a href="#!" class="brand-logo"><img src="{% static 'imagen/logo.png' %}"alt="Error" width="50"> </a>
+      <a href="Principal" class="brand-logo"><img src="{% static 'imagen/logo.png' %}"alt="Error" width="50"> </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <a href="Principal" class="brand-logo left" ></a>
